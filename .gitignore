@@ -1,0 +1,5 @@
+output/with_genders/*
+input/known_identities/*
+!sample_file.csv
+.idea/
+/helpers/GenderAPI

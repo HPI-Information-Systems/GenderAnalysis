@@ -1,0 +1,3 @@
+field,venue,year,paper_id,title,author_position,author_name,author_id,man,woman,neutral,unknown,accuracy,f,m,author_position_last
+AI,AAAI,1980,https://dblp.org/db/conf/aaai/aaai80.html#conf/aaai/KenderK80,"Mapping Image Properties into Shape Constraints: Skewed Symmetry and Affine-Tramsfornable Patterns, and the Shape-from-Texture Paradigm.",1,John R. Kender,l/JohnRKender,,,,,,,,2
+AI,AAAI,1980,https://dblp.org/db/conf/aaai/aaai80.html#conf/aaai/KenderK80,"Mapping Image Properties into Shape Constraints: Skewed Symmetry and Affine-Tramsfornable Patterns, and the Shape-from-Texture Paradigm.",2,Takeo Kanade,k/TakeoKanade,,,,,,,,2
