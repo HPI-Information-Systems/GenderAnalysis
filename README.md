@@ -1,26 +1,25 @@
 # GenderAnalysis
-An analysis of gender distribution in scientific publications. Genders are determined with the commercial tool 
-[Gender-API](https://gender-api.com/) on the basis of first names. Results are `female`, `male`, `neutral` or `unknown`.  
-With the ratio between unique woman and man among the authors in mind, we assign authors with unknown or neutral gender 
-one of the binary genders. As this is a random process, it will produce different outcomes with each execution resulting
-in slightly different plots.
+## An analysis of gender distribution in scientific publications
+
+We determine the gender of a scientist using the commercial tool 
+[Gender-API](https://gender-api.com/) on the basis of first names. Results are `female`, `male`, `neutral` or `unknown`. For authors with unknown or neutral gender, we randomly assign one of the binary genders based the ratio between unique woman and man among the other authors. As this is a random process, it will produce different outcomes with each execution resulting in slightly different plots.
 
 While we realize that gender is not a binary concept distinguishing women and men, we do not have the means 
 to identify any more fine-grained designations based on the given data (first names), which matches that which reviewers
-and readers usually have at their disposition. 
+and readers usually also have at their disposition. 
 
 ## Setup
 
-Clone the repository and install all dependencies. We use Pipenv to manage dependencies, so this must be installed 
+Clone the repository and install all dependencies. We use pipenv to manage dependencies, so this must be installed 
 first. To install other dependencies, run `pipenv install`.
-For getting the publication data, we use [dblp-retriever](https://github.com/nenock/dblp-retriever) which is soon going
+To obtain the publication data of interest, we use [dblp-retriever](https://github.com/nenock/dblp-retriever) which is soon going
 to be installed as a submodule here.
 
 ## Usage
 
 ### Get help and documentation
-Run `pipenv run python3 analyse_dblp_data.py --help` to get a list of possible subcommands `analyse_dblp_data` provides.
-Run get information about the subcommand, just run `pipenv run python3 analyse_dblp_data.py <subcommand> --help`. 
+Run `pipenv run python3 analyse_dblp_data.py --help` to get the list of possible subcommands `analyse_dblp_data` provides.
+To obtain information about the subcommand, just run `pipenv run python3 analyse_dblp_data.py <subcommand> --help`. 
 
 ### Extract unique first names for initial gender-annotation
 We use the Gender-API to determine the gender of author's first names (sometimes middle names are used).
@@ -36,7 +35,7 @@ Upload the list of first_names (`helpers/first_names.csv`) to the Gender-API and
 `helpers/GenderAPI`. 
 
 ### Run the gender analysis
-After having one or more lists of gender-annotated first names under `helpers/GenderAPI`, run the following
+After receiving one or more lists of gender-annotated first names under `helpers/GenderAPI`, run the following
 command with the path to a specific file or to a directory to use all files in there to do the gender analysis.
 
 ```pipenv run python3 analyse_dblp_data.py analyse-data helpers/GenderAPI/``` OR
@@ -47,8 +46,7 @@ It saves the gender-annotated list of authorships under `output/with_genders` an
 `/output`. Statistics (first and last publication year, overall number of papers and overall number of unique authors)
 of the venues are saved to `output/statistics.txt`.
 
-If you add later on new submission data with potential unseen first names, just run the analysis, pass 
-`helpers/unprocessed_first_names.csv` to the Gender-API and add the result to `helpers/GenderAPI`.
+If you later add new submission data with potential yet unseen first names, just run the analysis, pass `helpers/unprocessed_first_names.csv` to the Gender-API and add the result to `helpers/GenderAPI`.
 
 ### Get names of unknown or neutral gender for manual annotations
 If you want to manually annotate the gender of known persons that were given a neutral or unknown gender by the 
@@ -62,5 +60,5 @@ OR with specified source and destination files:
 
 ```pipenv run python3 analyse_dblp_data.py extract-unknown-neutrals --source output/with_genders/authorships_db_field_gender_assumed_without_PODS.csv --destination input/known_identities/unknown_neutral_db_authors.csv```
 
-Just add a `1` in the applicable gender column for persons who and whose gender you can identify with certainty. 
+Just add a `1` in the applicable gender column for persons whose gender you can identify with certainty. 
 You can find an annotated sample output file under `input/known_identities/sample_file.csv`. 
