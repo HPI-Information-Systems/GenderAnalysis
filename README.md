@@ -1,4 +1,7 @@
 # GenderAnalysis
+
+This repository and its data is the basis for our 2021 SIGMOD Record [publication](https://sigmodrecord.org/2021/12/31/how-inclusive-are-we-an-analysis-of-gender-diversity-in-database-venues/) "How Inclusive are We? An Analysis of Gender Diversity in Database Venues" (Angela Bonifati, Michael J. Mior, Felix Naumann, Nele Sina Noack). It can easily be adapted to other publication lists and venues. Feedback is welcome.
+
 ## An analysis of gender distribution in scientific publications
 
 We determine the gender of a scientist using the commercial tool 
