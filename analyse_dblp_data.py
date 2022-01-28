@@ -61,7 +61,7 @@ def analyse_data(gapi_path):
     Read the csv files given in '/input' (with commas as separators), extract authorships from it and enrich them with
     gender based on the file(s) given under param gapi_path (with semicolons as separators as the csv files returned by
     the Gender-API uses semicolons as separators). It produces plots saved to '/output' and also saves still unknown
-    names under '/helpers/unprocessed_first_names.csv' for future processing by the Gender-API.
+    names under '/helper_files/unprocessed_first_names.csv' for future processing by the Gender-API.
 
     :param gapi_path: path, both a file or a directory is accepted
     """
@@ -104,7 +104,7 @@ def analyse_data(gapi_path):
 
     # Extract and save unknown names
     unknown = df[df.unknown == 1]
-    prepare_names_for_gapi('helpers/unprocessed_first_names.csv', df=unknown)
+    prepare_names_for_gapi('helper_files/unprocessed_first_names.csv', df=unknown)
 
     # Save and print used publication range per venue as well as total number of papers and authors
     statistics = df.groupby(['venue']).agg({'year': ['min', 'max'], 'paper_id': pd.Series.nunique,
@@ -533,7 +533,7 @@ if __name__ == '__main__':
         Read the csv files given in '/input' (with commas as separators), extract authorships from it and enrich them
         with gender based on the file(s) given under param gapi_path (with semicolons as separators as the csv files
         returned by the Gender-API uses semicolons as separators). It produces plots saved to '/output' and also saves
-        still unknown names under '/helpers/unprocessed_first_names.csv' for future processing by the Gender-API.
+        still unknown names under '/helper_files/unprocessed_first_names.csv' for future processing by the Gender-API.
 
         :param gapi_path: path, both a file or a directory is accepted
         """
