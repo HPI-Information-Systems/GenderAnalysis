@@ -1,4 +1,4 @@
-# GAP: Gender Analysis for Publication
+# GAP: Gender Analysis for Publications
 
 This repository and its data are the basis for our 2021 SIGMOD Record
 [publication](https://sigmodrecord.org/2021/12/31/how-inclusive-are-we-an-analysis-of-gender-diversity-in-database-venues/)
