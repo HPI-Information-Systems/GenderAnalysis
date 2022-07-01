@@ -289,7 +289,7 @@ def gapi_gender(author_name, gapi_path, with_accuracy=False):
 
 def aggregate_authorship(df, group_attrs=None, funcs=None):
     """
-    Compute 3-year moving average of the percentage of woman being at a certain position of the authors list. Positions
+    Compute the average per year of the percentage of woman being at a certain position of the authors list. Positions
     can be: first, last, any and all (specified in param funcs).
 
     :param df:          pd.DataFrame, containing authorships. See method 'authorships' for more details.
@@ -321,7 +321,7 @@ def aggregate_authorship(df, group_attrs=None, funcs=None):
 
 def plot_moving_averages_of_authorships(df, plot_label, save=None, header=True):
     """
-    Plots or saves moving averages of the percentage of woman being at a certain position of the authors list.
+    Plots or saves 3-year moving averages of the percentage of woman being at a certain position of the authors list.
 
     :param df:          pd.DataFrame of aggregates, See 'aggregate_authorship' for more details.
     :param plot_label:  string, to be added to the plot's title or file's name if param save == None.
